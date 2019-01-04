@@ -18,18 +18,26 @@ class Grid extends Component {
           editable: true,
           cellEditorParams: {
             values: ["Ford", "Porsche", "Toyota"]
+          },
+          filter: "agSetColumnFilter",
+          filterParams: {
+            cellHeight: 20,
+            values: ["Ford", "Porsche", "Toyota"],
+            newRowsAction: "keep"
           }
         },
         {
           headerName: "Model",
           field: "model",
-          editable: true
+          editable: true,
+          suppressFilter: true
         },
         {
           headerName: "Price",
           field: "price",
           cellEditor: "numericEditor",
-          editable: true
+          editable: true,
+          filter: "agNumberColumnFilter"
         }
       ],
       detailCellRendererParams: {
@@ -76,6 +84,7 @@ class Grid extends Component {
       <AgGridReact
         enableSorting={true}
         enableFilter={true}
+        floatingFilter={true}
         columnDefs={this.state.columnDefs}
         rowData={this.state.rowData}
         enableColResize={true}

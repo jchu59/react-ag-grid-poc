@@ -18,9 +18,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## POC Features
 
-- 'Make' column supports Select List editing
-- 'Model' column supports text editing
-- 'Price' column supports numeric editing
+- 'Make' column supports Select List editing and a Set Filter
+- 'Model' column supports text editing and No Filter
+- 'Price' column supports numeric editing and a Numeric Filter
 - Data is loaded into grid from Internet using React Promise
 - Save button prints editing JSON to console
 - Grid supports master-detail. Opening a row displays the row's detail grid with columns OID, Name, and Download
