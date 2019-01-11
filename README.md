@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Install Node Package Manager.
 2. Install node modules:
 
-- npm install --save ag-grid-enterprise ag-grid-community ag-grid-react node-sass bootstrap react-router-dom
+- npm install
 
 ## Available Scripts
 

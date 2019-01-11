@@ -2,7 +2,7 @@ import React from "react";
 import "./App.scss";
 
 import Portal from "./components/Portal.jsx";
-import Login, { fakeAuth } from "./components/Login.jsx";
+import LoginPage from "./LoginPage.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 
 import {
@@ -13,13 +13,13 @@ import {
 } from "react-router-dom";
 
 export default function PortalApp() {
-  console.log("App render.  Authenticated: " + fakeAuth.isAuthenticated);
+  // console.log("App render.  Authenticated: " + fakeAuth.isAuthenticated);
   return (
     <Router>
       <Route path="/">
         <div>
           <Switch>
-            <Route path="/login" component={Login} exact />
+            <Route path="/login" component={LoginPage} exact />
             <PrivateRoute path="/" component={Portal} />
           </Switch>
         </div>
@@ -44,15 +44,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      fakeAuth.isAuthenticated === true ? (
+      localStorage.getItem("user") ? (
         <Component {...props} />
       ) : (
-        <Redirect
-          to={{
-            pathname: "/login",
-            state: { from: props.location }
-          }}
-        />
+        <Redirect to={{ pathname: "/login" }} />
       )
     }
   />
