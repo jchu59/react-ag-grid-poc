@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 
-import Grid from "./Grid.jsx";
-class Portal extends Component {
+import Grid from "./components/Grid.jsx";
+class PortalPage extends Component {
   constructor(props) {
     super(props);
     this.child = React.createRef();
@@ -42,4 +42,4 @@ class Portal extends Component {
   }
 }
 
-export default withRouter(Portal);
+export default withRouter(PortalPage);
